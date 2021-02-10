@@ -14,6 +14,12 @@ function animasiButton(){
                 });
 }
 
+function animasiIntroOut(){
+    $('#start').velocity("transition.whirlOut", {stagger: 150, complete: function(){
+        $('#text').velocity({"font-size":"20px", "top":"95%"}, {duration: 1000});
+    }});
+}
+
 $(document).ready(function(){
     animasiInfo();
 });
