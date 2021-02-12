@@ -1,2 +1,3 @@
 # webanimasi
-Memahami Flow Github Test Dulu
+Memahami Flow Git
+Ane So Clean Code Kurang Indra Yang Finishing Itu
