@@ -26,7 +26,6 @@ function animasitIntroOut(){
                                                             complete: function(){
                                                                 callMenu();
                                                                 $("#menu ul li a[href='what_we_do']").trigger("click");
-                                                                $("#start").attr('disabled', false);
                                                             }
                                                         });
                                 }
@@ -38,10 +37,20 @@ function callMenu(){
                                 stagger: 250
                              });
 
-    $("#menu ul li a").off("click").click(function(event){
+    $("#menu ul li a").click(function(event){
         event.preventDefault();
         $(this).parent("li").addClass("active").siblings().removeClass("active");
+
+        var hrefString = $(this).attr("href");
+        $("#" + hrefString).show();
+        window[hrefString]();
     });
+}
+
+function what_we_do(){
+    $("what_we_do img").velocity("transition.flipYIn", {duration:1500});
+    $("what_we_do .title").velocity("transition.slideUpIn", {duration:1500});
+    $("what_we_do div").velocity("transition.slideDownIn", {duration:1500});
 }
 
 $(document).ready(function(){
